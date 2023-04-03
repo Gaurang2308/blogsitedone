@@ -7,10 +7,11 @@ import { UserComponent } from './user/user.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
+  {path:'',pathMatch:'full',redirectTo:'/home'},
   {path:'login',component:LoginComponent},
   {path:'admin', component:AdminComponent},
   {path:'user', component:UserComponent},
-  {path:'',component:HomeComponent},
+  {path:'home',component:HomeComponent},
   {path:'content',component:ContentComponent}
 ];
 

@@ -1,6 +1,7 @@
 <nav class="navbar navbar-dark bg-primary">
     <div class="container-fluid">
-      <h2>blog</h2>
+      <a routerLink="/home">Home</a>
+      
       <div class="d-flex">
         <button *ngIf = 'logged() == false' routerLink="/login" class="btn btn-success" routerLinkActive="active"
         type="Login">Login</button>
