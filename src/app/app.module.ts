@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AdminComponent } from './admin/admin.component';
 import { UserComponent } from './user/user.component';
 import { HomeComponent } from './home/home.component';
+import { ContentComponent } from './content/content.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { HomeComponent } from './home/home.component';
     LoginComponent,
     AdminComponent,
     UserComponent,
-    HomeComponent
+    HomeComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { usersData } from './admin.modal'
 import { FormGroup,FormBuilder} from '@angular/forms';
 import { UsersDataService } from './../services/users-data.service';
@@ -24,7 +25,7 @@ data: any;
 reloadPage() {
   location.reload();
 }
-  constructor(private formbuilder:FormBuilder,private api:UsersDataService){
+  constructor(private formbuilder:FormBuilder,private api:UsersDataService,private route : Router){
     api.blogs().subscribe((display)=>
     {
       // console.warn("display",display)
@@ -42,12 +43,8 @@ reloadPage() {
       name:[''],
       username:[''],
       password:[''],
-      status:[''],
-      title:[''],
-      discription:[''],
-      url:['']
-
-     })
+      status:[''] 
+      })
   }
  
   addusers(){
@@ -84,41 +81,11 @@ reloadPage() {
     }
 
     showTable1() {
-      this.isTable1Visible = true;
-      this.isTableVisible=false;
+      // this.isTable1Visible = true;
+      // this.isTableVisible=false;
+      this.route.navigate(['/content']);
       
     }
-    delBlogs(data: any) {
-      this.api.deleteBlgs(data.id).subscribe(res => {
-        console.log(res);
-        alert("Data deleted");
-        this.formvalue.reset();
-      })
-    }
-
-    OnEditBlogs(data:any){
-     
-      this.blogid=data.id
-      console.log(data);
-      this.formvalue.controls['username'].setValue(data.Username)
-      this.formvalue.controls['title'].setValue(data.title)
-      this.formvalue.controls['discription'].setValue(data.discription)
-      this.formvalue.controls['url'].setValue(data.url)
-  }
-
-  UpdateBlog(data:any){
-    console.log("updated",data);
     
-    // this.blogModelobj.title = this.formvalue.value.title;
-    // this.blogModelobj.discription = this.formvalue.value.discription;
-    // this.blogModelobj.url = this.formvalue.value.url;
-    this.api.updateblogs(data,this.blogid).subscribe(res=>{
-      console.log(res);
-      
-      alert("record updated successfully")
-      this.formvalue.reset();
-      this.reloadPage();
-    });
-  }
   }
 

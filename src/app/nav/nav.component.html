@@ -2,8 +2,12 @@
     <div class="container-fluid">
       <h2>blog</h2>
       <div class="d-flex">
-        <button class="btn btn-success" (click)="loginpage()">Login</button>
+        <button *ngIf = 'logged() == false' routerLink="/login" class="btn btn-success" routerLinkActive="active"
+        type="Login">Login</button>
+        <button *ngIf ='logged() == true' routerLink="/login" class="btn btn-success" routerLinkActive="active"
+        type="Login" (click)="sessionlogout()">Logout</button>
       </div>
+      
     </div>
   </nav>
   <router-outlet></router-outlet>

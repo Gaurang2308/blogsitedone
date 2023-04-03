@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsersDataService } from '../services/users-data.service';
 
@@ -7,23 +7,33 @@ import { UsersDataService } from '../services/users-data.service';
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css']
 })
-export class NavComponent {
-  display:any;
-  blogs:any;
-  allusersData: any;
+export class NavComponent implements OnInit {
+sessionData:any;
+  
   constructor(private route:Router,private api:UsersDataService){
-    api.blogs().subscribe((display)=>
-    {
-      // console.warn("display",display)
-      console.log(display);
-      this.blogs=display;
-    }
-    );
-    api.users().subscribe((data)=>{
-    console.warn("data",data);
-    this.allusersData=data;
-  });
+    this.logged();
   }
+ngOnInit(): void {
+  if (sessionStorage.getItem('user')!=null){
+    this.sessionData = JSON.parse(sessionStorage.getItem('user')||'');
+  }
+}
+
+logged(){
+  this.ngOnInit();
+  if(sessionStorage.getItem('user')!=null){
+    return true;
+  } 
+  else{
+    return false;
+  }
+} 
+
+sessionlogout(){
+  this.ngOnInit();
+  sessionStorage.clear();
+}
+
   loginpage(){
     this.route.navigate(['login']);
   }

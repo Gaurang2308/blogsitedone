@@ -1,3 +1,4 @@
+import { ContentComponent } from './content/content.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
@@ -9,7 +10,8 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'admin', component:AdminComponent},
   {path:'user', component:UserComponent},
-  {path:'',component:HomeComponent}
+  {path:'',component:HomeComponent},
+  {path:'content',component:ContentComponent}
 ];
 
 @NgModule({

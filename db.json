@@ -34,62 +34,22 @@
       "username": "dev2308",
       "password": "Dev@2308",
       "status": "user"
+    },
+    {
+      "id": 6,
+      "name": "suyas",
+      "username": "suyas@2001",
+      "password": "suyas@1212",
+      "status": "user"
     }
   ],
   "Blogs": [
     {
-      "name": "",
-      "username": "dev2308",
-      "password": "",
-      "status": "",
-      "title": " hello What’s Going On? The Silicon Valley Bank Collapse vs. the 2008 Financial Crisis",
-      "discription": " Silicon Valley Bank, the financial industry, and how we move forward — When you’re driving, you have a reasonable assumption that other drivers will follow the rules.",
-      "url": "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*RSIvKqwzu_NhP3j026snnA.png",
-      "id": 35
-    },
-    {
-      "name": "",
-      "username": "dev2308",
-      "password": "",
-      "status": "",
-      "title": " hello Beginning Again At Fifty-Five",
-      "discription": " Trying to knock sense into the younger generation is not for the faint of heart — In one of my earlier pieces on writing, Singaporean author Alvin Ang asked me in the comment section",
-      "url": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*F6ZwcDCqfcIakTpnEwuSmw.jpeg",
-      "id": 36
-    },
-    {
       "Username": "Parth5021",
-      "title": "AI and the American Smile ",
-      "discription": "Imagine a time traveler journeyed to various times and places throughout human history and showed soldiers and warriors of the periods what a “selfie” is.",
-      "url": "https://miro.medium.com/v2/resize:fit:720/0*7o1nPtr260CgeJ-Z",
-      "id": 40
-    },
-    {
-      "Username": "Parth5021",
-      "title": "The [Heart] of the Matter",
-      "discription": "1976, New York designer Milton Glaser sat in the back seat of a taxi and arranged three capital letters and a stylized red heart into one of the most effective slogans in contemporary branding history.",
+      "title": "The [Heart] of the Matter ",
+      "discription": "1976, New York designer Milton Glaser sat in the back seat of a taxi and arranged three capital letters and a stylized red heart into on",
       "url": "https://miro.medium.com/v2/resize:fit:640/format:webp/1*QR-c_70c0Nm6yakTiY9mzw.png",
       "id": 41
-    },
-    {
-      "name": "",
-      "username": "Parth5021",
-      "password": "",
-      "status": "",
-      "title": "Small Things",
-      "discription": "What if there is no new you No #vanlife mountain vista No trail of dust, no grand rebirth",
-      "url": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*jxtrk-wkZJYBJNfM5XceaA.jpeg",
-      "id": 42
-    },
-    {
-      "name": "",
-      "username": "Parth5021",
-      "password": "",
-      "status": "",
-      "title": "One of the Guys ggggg",
-      "discription": "The Nashville shooter’s gender identity has led to charges of “trans terrorism” — but the face of gun violence is almost always a cis white man.",
-      "url": "https://miro.medium.com/v2/resize:fit:720/0*1NNNMrngQ2dxKqVN",
-      "id": 43
     },
     {
       "Username": "Parth5021",
@@ -97,6 +57,55 @@
       "discription": "My grandfather Liu Chengyu was a scholar revolutionary bent on overthrowing China’s Qing (aka Ch’ing) Dynasty in the early 1900s. He was also a poet and author",
       "url": "https://miro.medium.com/v2/resize:fit:640/format:webp/1*bStxjI9JNOvFyU7aoneRlw.jpeg",
       "id": 44
+    },
+    {
+      "Username": "Urvi2308",
+      "title": "AI and the American Smile",
+      "discription": "Imagine a time traveler journeyed to various times and places throughout human history and showed soldiers and warriors of the periods what a “selfie” is.",
+      "url": "https://miro.medium.com/v2/resize:fit:720/0*7o1nPtr260CgeJ-Z",
+      "id": 45
+    },
+    {
+      "Username": "Urvi2308",
+      "title": "Small Things",
+      "discription": "What if there is no new you No #vanlife mountain vista No trail of dust, no grand rebirth",
+      "url": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*jxtrk-wkZJYBJNfM5XceaA.jpeg",
+      "id": 46
+    },
+    {
+      "Username": "Jay2308",
+      "title": "Ukraine War, 20 March 2023",
+      "discription": "Reading different comments of the last days and weeks, it’s obvious that too many people have too much time, and everybody knows better, of course.",
+      "url": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*7gmJSUkbK-xelHXwF3ddSQ.jpeg",
+      "id": 47
+    },
+    {
+      "Username": "Jay2308",
+      "title": "The [Heart] of the Matter",
+      "discription": "In1976, New York designer Milton Glaser sat in the back seat of a taxi and arranged three capital letters and a stylized red heart into one of the most effective slogans in contemporary branding history.",
+      "url": "https://miro.medium.com/v2/resize:fit:640/format:webp/1*QR-c_70c0Nm6yakTiY9mzw.png",
+      "id": 48
+    },
+    {
+      "Username": "dev2308",
+      "title": "What’s Going On? The Silicon Valley Bank Collapse vs. the 2008 Financial Crisis",
+      "discription": "Confused? Here’s a simple (yet thorough!) explainer.",
+      "url": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*RSIvKqwzu_NhP3j026snnA.png",
+      "id": 50
+    },
+    {
+      "Username": "suyas@2001",
+      "title": "The Curse of Perfect",
+      "discription": "My parents believed this so deeply that they left China with a one-way plane ticket and hundreds of dollars in folded bills, their mouths full of broken English.",
+      "url": "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*X2OrXOQxI2vET4ZaPIO4YQ.jpeg",
+      "id": 51
+    },
+    {
+      "Username": "suyas@2001",
+      "title": "Power Laws in Culture",
+      "discription": "Almost 20 years ago, Chris Anderson wrote The Long Tail, which accurately predicted that the Internet would fragment attention and consumption would shift into the “tail.” ",
+      "url": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*OShjeQUTuvh9i2Bulb47aQ.jpeg",
+      "id": 52
     }
   ],
   "posts": [
