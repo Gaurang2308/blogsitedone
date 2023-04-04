@@ -1,12 +1,12 @@
 <nav>
     <ul>
       <li>
-        <button (click)="showTable()" class="home-icon">
+        <div class="home-icon" (click)="showTable()">
           <div class="roof">
             <div class="roof-edge"></div>
           </div>
           <div class="front"></div>
-        </button>
+        </div>
       </li>
      
       <li>
@@ -21,7 +21,7 @@
     </ul>
   </nav>
   <div class="container">
-    <table *ngIf="isTableVisible" class="table table-trapped">
+    <table class="table table-trapped">
       <thead>
           <tr>
               <th>id</th>

@@ -76,8 +76,8 @@ export class AdminComponent {
   // }
   
     showTable() {
-      this.isTableVisible = true;
-      this.isTable1Visible=false;
+      // this.isTableVisible = true;
+      // this.isTable1Visible=false;
       this.route.navigate(['/usertable']);
     }
 

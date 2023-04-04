@@ -77,14 +77,14 @@ reloadPage() {
   }
   
     showTable() {
-      this.isTableVisible = true;
-      this.isTable1Visible=false;
       this.route.navigate(['/usertable']);
+      this.isTableVisible = true;
+      // this.isTable1Visible=false;
     }
 
     showTable1() {
-      // this.isTable1Visible = true;
-      // this.isTableVisible=false;
+      this.isTable1Visible = true;
+      this.isTableVisible=false;
       this.route.navigate(['/content']);
       
     }

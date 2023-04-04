@@ -45,8 +45,8 @@ export class ContentComponent implements OnInit {
 }
 
 showTable() {
-  // this.isTableVisible = true;
-  // this.isTable1Visible=false;
+  this.isTableVisible = true;
+  this.isTable1Visible=false;
   this.route.navigate(['/usertable']);
 }
 
