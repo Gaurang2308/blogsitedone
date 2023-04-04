@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { UsersDataService } from '../services/users-data.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
@@ -11,7 +11,10 @@ export class ContentComponent implements OnInit {
   blogs: any;
   formvalue!: FormGroup;
   blogid: any;
-  constructor(private formbuilder:FormBuilder,private api:UsersDataService){
+  isTableVisible = false;
+  isTable1Visible = false;
+  
+  constructor(private formbuilder:FormBuilder,private api:UsersDataService,private route:Router){
     api.blogs().subscribe((display)=>
     {
       // console.warn("display",display)
@@ -39,6 +42,19 @@ export class ContentComponent implements OnInit {
     this.formvalue.reset();
     this.reloadPage();
   })
+}
+
+showTable() {
+  // this.isTableVisible = true;
+  // this.isTable1Visible=false;
+  this.route.navigate(['/usertable']);
+}
+
+showTable1() {
+  this.isTable1Visible = true;
+  this.isTableVisible=false;
+  this.route.navigate(['/content']);
+  
 }
 
 OnEditBlogs(data:any){

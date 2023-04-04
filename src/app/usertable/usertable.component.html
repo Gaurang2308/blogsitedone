@@ -1,0 +1,54 @@
+<nav>
+    <ul>
+      <li>
+        <button (click)="showTable()" class="home-icon">
+          <div class="roof">
+            <div class="roof-edge"></div>
+          </div>
+          <div class="front"></div>
+        </button>
+      </li>
+     
+      <li>
+        <div class="about-icon" (click)="showTable1()">
+          <div class="head">
+            <div class="eyes"></div>
+            <div class="beard"></div>
+          </div>
+        </div>
+      </li>
+  
+    </ul>
+  </nav>
+  <div class="container">
+    <table *ngIf="isTableVisible" class="table table-trapped">
+      <thead>
+          <tr>
+              <th>id</th>
+              <th>name</th>
+              <th>username</th>
+              <th>password</th>
+              <th>status</th>
+             
+              <th>
+                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-left: 20px;">Add</button><br/>
+               </th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let data of allusersData">
+             <td>{{data.id}}</td>
+             <td>{{data.name}}</td>
+             <td>{{data.username}}</td>
+             <td>{{data.password}}</td>
+             <td>{{data.status}}</td>
+            
+             <td>
+              <button class="btn btn-danger"(click)="deleteuser(data)"><i class="bi bi-trash"></i></button>
+             </td>
+          </tr>
+      </tbody>
+  </table>
+  </div>
+    
+  

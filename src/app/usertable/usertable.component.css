@@ -297,6 +297,26 @@ nav ul li div { position: relative; }
 }
 
 
+
+
+
+.container{
+padding: 0;
+margin: 0;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.table{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border-collapse: collapse;
+    width: 800px;
+    height: 200px;
+    border: 1px solid #bdc3c7;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 8px rgba(0,0,0,0.2);
+    background-color: silver;
+}
 tr{
     transition: all .2s ease-in;
     cursor: pointer;
@@ -319,7 +339,7 @@ tr:hover{
 thead{
     background-color: sandybrown;
 }
-
+/* 
 .container1{
     padding: 0;
     margin: 0;
@@ -330,4 +350,4 @@ thead{
         border: 1px solid #bdc3c7;
         box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 8px rgba(0,0,0,0.2);
         background-color: silver;
-    }  
+    }     */

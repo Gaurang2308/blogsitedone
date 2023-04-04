@@ -62,5 +62,22 @@ export class UsersDataService {
     }))
     // return this.http.put<any>(this.blog+"/"+blogData,id);
   }
-    
+  isLoginUser() {
+    if (sessionStorage.getItem('user') != null) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+  isRoleAdmin() {
+    const sessionData = JSON.parse(sessionStorage.getItem('user') || '');
+    if (sessionData[0].role === 'admin') {
+
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
 }

@@ -9,75 +9,76 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css']
 })
-export class AdminComponent implements OnInit{
-  formvalue!: FormGroup
-  editform!:FormGroup;
-  user:any
-  allusersData:any
-  users:any
-  blogid:any;
+export class AdminComponent {
+//   formvalue!: FormGroup
+//   editform!:FormGroup;
+//   user:any
+//   allusersData:any
+//   users:any
+//   blogid:any;
   isTableVisible = false;
   isTable1Visible = false;
-  usersModalObj : usersData = new usersData;
-  blogs: any;
-display: any;
-data: any;
-reloadPage() {
-  location.reload();
-}
-  constructor(private formbuilder:FormBuilder,private api:UsersDataService,private route : Router){
-    api.blogs().subscribe((display)=>
-    {
-      // console.warn("display",display)
-      console.log(display);
-      this.blogs=display;
-    }
-    );
-    api.users().subscribe((data)=>{
-    console.warn("data",data);
-    this.allusersData=data;
-  });
-  }
-  ngOnInit(): void {
-     this.formvalue=this.formbuilder.group({
-      name:[''],
-      username:[''],
-      password:[''],
-      status:[''] 
-      })
-  }
+//   usersModalObj : usersData = new usersData;
+//   blogs: any;
+// display: any;
+// data: any;
+// reloadPage() {
+//   location.reload();
+// }
+  constructor(private formbuilder:FormBuilder,private api:UsersDataService,private route : Router){}
+//     api.blogs().subscribe((display)=>
+//     {
+//       // console.warn("display",display)
+//       console.log(display);
+//       this.blogs=display;
+//     }
+//     );
+//     api.users().subscribe((data)=>{
+//     console.warn("data",data);
+//     this.allusersData=data;
+//   });
+//   }
+//   ngOnInit(): void {
+//      this.formvalue=this.formbuilder.group({
+//       name:[''],
+//       username:[''],
+//       password:[''],
+//       status:[''] 
+//       })
+//   }
  
-  addusers(){
-    this.usersModalObj.name = this.formvalue.value.name;
-    this.usersModalObj.username = this.formvalue.value.username;
-    this.usersModalObj.password = this.formvalue.value.password;
-    this.usersModalObj.status = this.formvalue.value.status;
-    this.usersModalObj.blog = this.formvalue.value.blog
+  // addusers(){
+  //   this.usersModalObj.name = this.formvalue.value.name;
+  //   this.usersModalObj.username = this.formvalue.value.username;
+  //   this.usersModalObj.password = this.formvalue.value.password;
+  //   this.usersModalObj.status = this.formvalue.value.status;
+  //   this.usersModalObj.blog = this.formvalue.value.blog
 
-    this.api.postusers(this.usersModalObj).subscribe(res=>{
-      console.log(res);
-      alert("user record added successfully")
-      this.formvalue.reset()
-      this.getallData();
-     // sessionStorage.setItem('userdata',JSON.stringify(this.allusersData));
+  //   this.api.postusers(this.usersModalObj).subscribe(res=>{
+  //     console.log(res);
+  //     alert("user record added successfully")
+  //     this.formvalue.reset()
+  //     this.getallData();
+  //    // sessionStorage.setItem('userdata',JSON.stringify(this.allusersData));
       
-    })
-  }
-  getallData(){
-    this.api.getusers().subscribe(res=>{
-      this.allusersData = res;
-    })
-  }
-  deleteuser(data:any){
-    this.api.deleteusers(data.id).subscribe(res=>{
-      alert("record delete successfully")
-      this.getallData();
-    })
-  }
+  //   })
+  // }
+  // getallData(){
+  //   this.api.getusers().subscribe(res=>{
+  //     this.allusersData = res;
+  //   })
+  // }
+  // deleteuser(data:any){
+  //   this.api.deleteusers(data.id).subscribe(res=>{
+  //     alert("record delete successfully")
+  //     this.getallData();
+  //   })
+  // }
   
     showTable() {
       this.isTableVisible = true;
       this.isTable1Visible=false;
+      this.route.navigate(['/usertable']);
     }
 
     showTable1() {

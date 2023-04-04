@@ -10,6 +10,7 @@ import { AdminComponent } from './admin/admin.component';
 import { UserComponent } from './user/user.component';
 import { HomeComponent } from './home/home.component';
 import { ContentComponent } from './content/content.component';
+import { UsertableComponent } from './usertable/usertable.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { ContentComponent } from './content/content.component';
     AdminComponent,
     UserComponent,
     HomeComponent,
-    ContentComponent
+    ContentComponent,
+    UsertableComponent
   ],
   imports: [
     BrowserModule,
