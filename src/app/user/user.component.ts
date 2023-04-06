@@ -46,8 +46,16 @@ export class UserComponent implements OnInit {
     // console.log(this.userName)
   }
 
+  onAddBlogHandler(){
+  
+    this.formvalue.controls['title'].setValue("")
+    this.formvalue.controls['discription'].setValue("")
+    this.formvalue.controls['url'].setValue("")
+  }
+
   addblog() {
     // console.log(JSON.parse(this.userName).username);
+    
     this.blogModelobj.title = this.formvalue.value.title;
     this.blogModelobj.discription = this.formvalue.value.discription;
     this.blogModelobj.url = this.formvalue.value.url;
