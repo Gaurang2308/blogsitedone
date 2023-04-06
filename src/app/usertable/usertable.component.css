@@ -304,18 +304,15 @@ nav ul li div { position: relative; }
 padding: 0;
 margin: 0;
 font-family: Verdana, Geneva, Tahoma, sans-serif;
+width: 100%;
+
 }
-.table{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    border-collapse: collapse;
-    width: 800px;
-    height: 200px;
-    border: 1px solid #bdc3c7;
-    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 8px rgba(0,0,0,0.2);
-    background-color: silver;
+.table1{
+	margin-left: 20%;
+	border: 1px solid #bdc3c7;
+	box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 8px rgba(0,0,0,0.2);
+	background-color: silver;
+	width: 800px;
 }
 tr{
     transition: all .2s ease-in;
