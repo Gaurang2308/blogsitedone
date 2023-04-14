@@ -1,3 +1,4 @@
+import { LoginserviceService } from './loginservice.service';
 
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -14,16 +15,18 @@ export class LoginComponent implements OnInit {
   status:any
   user:any;
   showData:any;
-  constructor(private formBuilder: FormBuilder, private _http: HttpClient, private router: Router,private dis:UsersDataService ) {
-    this.GetDetails();
+  users: any;
+  Credentials: any;
+  constructor(private formBuilder: FormBuilder, private _http: HttpClient, private router: Router,private dis:UsersDataService ,private Loginservice:LoginserviceService) {
+    // this.GetDetails();
    }
-   GetDetails() {
-    this.dis.users().subscribe((result) => {
-      this.showData = result;
-      console.log(this.showData);
-    }
-    )
-  }
+  //  GetDetails() {
+  //   this.dis.users().subscribe((result) => {
+  //     this.showData = result;
+  //     console.log(this.showData);
+  //   }
+  //   )
+  // }
   ngOnInit(): void {
     this.loginform = new FormGroup({
       username: new FormControl(''),
@@ -31,7 +34,12 @@ export class LoginComponent implements OnInit {
       })
   }
   logIn() {
-    this._http.get<any>("http://localhost:3000/users").subscribe(res=>{
+    this.Loginservice.doLogin(this.loginform.value).subscribe((data:any)=>{
+      console.log(data.token);
+      this.Loginservice.loginuser(data.token);
+      }
+    )
+    this._http.get<any>("http://localhost:8080/api/v1/employees").subscribe(res=>{
        this.user= res.find((a:any)=>{
          return a.username === this.loginform.value.username && a.password === this.loginform.value.password  
         })
@@ -48,6 +56,9 @@ export class LoginComponent implements OnInit {
         alert("login user successfully");
         this.loginform.reset();
         this.router.navigate(['user']);
+      }
+      else if(this.loginform.value.username!== this.user.username && this.loginform.value.password!== this.user.password){
+        console.log("invalid credential");
       }
       else{
         alert("user not found");

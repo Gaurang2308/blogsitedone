@@ -6,58 +6,58 @@ import {map} from 'rxjs/operators'
   providedIn: 'root'
 })
 export class UsersDataService {
-  user= "http://localhost:3000/users?status=user"
+  user= "http://localhost:8080/api/v1/employees?status=user"
   constructor(private http:HttpClient) { }
   users()
   {
     return this.http.get(this.user);
   }
   postusers(data:any){
-    return this.http.post<any>("http://localhost:3000/users",data).pipe(map((res:any)=>{
+    return this.http.post<any>("http://localhost:8080/api/v1/employees",data).pipe(map((res:any)=>{
       return res;
     }))
   }
   getusers(){
-    return this.http.get<any>("http://localhost:3000/users").pipe(map((res:any)=>{
+    return this.http.get<any>("http://localhost:8080/api/v1/employees").pipe(map((res:any)=>{
       return res;
     })) 
   }
   deleteusers(id:number){
-    return this.http.delete<any>("http://localhost:3000/users"+"/"+id).pipe(map((res:any)=>{
+    return this.http.delete<any>("http://localhost:8080/api/v1/employees"+"/"+id).pipe(map((res:any)=>{
       return res;
     })) 
   }
-  blog="http://localhost:3000/Blogs"
+  blog="http://localhost:8080/api/v1/Blogs"
   blogs()
   {
     return this.http.get(this.blog);
   }
   postblogs(data:any){
-    return this.http.post<any>("http://localhost:3000/Blogs",data).pipe(map((res:any)=>{
+    return this.http.post<any>("http://localhost:8080/api/v1/Blogs",data).pipe(map((res:any)=>{
       return res;
     }))
   }
   getblogs(){
-    return this.http.get<any>("http://localhost:3000/Blogs").pipe(map((res:any)=>{
+    return this.http.get<any>("http://localhost:8080/api/v1/Blogs").pipe(map((res:any)=>{
       return res;
     })) 
   }
   deleteblogs(id:number){
-    return this.http.delete<any>("http://localhost:3000/Blogs"+"/"+id).pipe(map((res:any)=>{
+    return this.http.delete<any>("http://localhost:8080/api/v1/Blogs"+"/"+id).pipe(map((res:any)=>{
       return res;
     })) 
   }
   GetblogById(id:any){
-    return this.http.get('http://localhost:3000/Blogs/?Username='+`${id}`);
+    return this.http.get('http://localhost:8080/api/v1/Blogs/?Username='+`${id}`);
   }
   deleteBlgs(id:number){
-    return this.http.delete<any>("http://localhost:3000/Blogs/"+id).pipe(map((res:any)=>{
+    return this.http.delete<any>("http://localhost:8080/api/v1/Blogs/"+id).pipe(map((res:any)=>{
       return res;
     }))
   }
   updateblogs(blogData:any,id:any){
 
-    return this.http.put<any>(`http://localhost:3000/Blogs/${id}`,blogData).pipe(map((res:any)=>{
+    return this.http.put<any>(`http://localhost:8080/api/v1/Blogs/${id}`,blogData).pipe(map((res:any)=>{
       return res;
     }))
     // return this.http.put<any>(this.blog+"/"+blogData,id);
