@@ -14,14 +14,12 @@ sessionData:any;
     this.logged();
   }
 ngOnInit(): void {
-  if (sessionStorage.getItem('user')!=null){
-    this.sessionData = JSON.parse(sessionStorage.getItem('user')||'');
-  }
+  
 }
 
 logged(){
   this.ngOnInit();
-  if(sessionStorage.getItem('user')!=null){
+  if(localStorage.getItem('token')!=null){
     return true;
   } 
   else{
@@ -31,7 +29,7 @@ logged(){
 
 sessionlogout(){
   this.ngOnInit();
-  sessionStorage.clear();
+  localStorage.clear();
 }
 
   loginpage(){

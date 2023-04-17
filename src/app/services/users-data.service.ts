@@ -47,8 +47,8 @@ export class UsersDataService {
       return res;
     })) 
   }
-  GetblogById(id:any){
-    return this.http.get('http://localhost:8080/api/v1/Blogs/?Username='+`${id}`);
+  GetblogById(username:any){
+    return this.http.get('http://localhost:8080/api/v1/Blogs/'+username);
   }
   deleteBlgs(id:number){
     return this.http.delete<any>("http://localhost:8080/api/v1/Blogs/"+id).pipe(map((res:any)=>{

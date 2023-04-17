@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsersDataService } from '../services/users-data.service';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { blogData } from './user.model'
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Component({
   selector: 'app-user',
@@ -19,12 +20,20 @@ export class UserComponent implements OnInit {
   showData: any;
   blogid:any;
   blogs: any;
+  token:any;
+  status:any;
   reloadPage() {
     location.reload();
   }
 
-  constructor(private dis: UsersDataService, private form: FormBuilder) {
-    this.userName = sessionStorage.getItem('username');
+  constructor(private dis: UsersDataService, private form: FormBuilder,private jwtHelper:JwtHelperService) {
+    this.token = localStorage.getItem('token');
+
+    const decodedToken = this.jwtHelper.decodeToken(this.token);
+    this.userName = decodedToken.sub;
+    this.status = decodedToken.status;
+    console.log(this.userName);
+
     this.loadBlogs();
   }
   ngOnInit(): void {

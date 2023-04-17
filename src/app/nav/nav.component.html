@@ -3,10 +3,10 @@
       <a routerLink="/home">Home</a>
       
       <div class="d-flex">
-        <button *ngIf = 'logged() == false' routerLink="/login" class="btn btn-success" routerLinkActive="active"
+        <button *ngIf = 'logged() == false' routerLink="/login" class="btn btn-success" 
         type="Login">Login</button>
-        <button *ngIf ='logged() == true' routerLink="/login" class="btn btn-success" routerLinkActive="active"
-        type="Login" (click)="sessionlogout()">Logout</button>
+        <button *ngIf ='logged() == true' routerLink="/login" class="btn btn-success" 
+        type="Logout" (click)="sessionlogout()">Logout</button>
       </div>
       
     </div>

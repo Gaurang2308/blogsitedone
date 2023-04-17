@@ -11,7 +11,10 @@ import { UserComponent } from './user/user.component';
 import { HomeComponent } from './home/home.component';
 import { ContentComponent } from './content/content.component';
 import { UsertableComponent } from './usertable/usertable.component';
-
+import { JwtHelperService, JwtModule } from '@auth0/angular-jwt';
+export function tokenGetter() {
+  return localStorage.getItem("token");
+}
 
 @NgModule({
   declarations: [
@@ -27,9 +30,14 @@ import { UsertableComponent } from './usertable/usertable.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    
     ReactiveFormsModule,
     HttpClientModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: ["localhost:4200"]
+      },
+    })
    
   ],
   providers: [],
