@@ -11,11 +11,11 @@ import { UsertableComponent } from './usertable/usertable.component';
 const routes: Routes = [
   {path:'',pathMatch:'full',redirectTo:'/home'},
   {path:'login',component:LoginComponent},
-  {path:'user', component:UserComponent},
-  {path:'admin', component:AdminComponent},
+  {path:'user', component:UserComponent,canActivate:[AuthGuard]},
+  {path:'admin', component:AdminComponent,canActivate:[AuthGuard]},
   {path:'home',component:HomeComponent},
-  {path:'content',component:ContentComponent},
-  {path:'usertable',component:UsertableComponent}
+  {path:'content',component:ContentComponent,canActivate:[AuthGuard]},
+  {path:'usertable',component:UsertableComponent,canActivate:[AuthGuard]}
 ];
 
 @NgModule({

@@ -63,7 +63,7 @@ export class UsersDataService {
     // return this.http.put<any>(this.blog+"/"+blogData,id);
   }
   isLoginUser() {
-    if (sessionStorage.getItem('user') != null) {
+    if (localStorage.getItem('token') != null) {
       return true;
     }
     else {
