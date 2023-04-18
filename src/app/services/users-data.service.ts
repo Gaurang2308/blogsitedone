@@ -56,8 +56,11 @@ export class UsersDataService {
     }))
   }
   updateblogs(blogData:any,id:any){
-
-    return this.http.put<any>(`http://localhost:8080/api/v1/Blogs/${id}`,blogData).pipe(map((res:any)=>{
+    let token=localStorage.getItem('token');
+    console.log("tgjhy",token);
+    return this.http.put<any>(`http://localhost:8080/api/v1/Blogs/${id}`,blogData, {
+      headers: {Authorization: 'Bearer ' + token}
+    }).pipe(map((res:any)=>{
       return res;
     }))
     // return this.http.put<any>(this.blog+"/"+blogData,id);

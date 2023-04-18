@@ -23,6 +23,7 @@ export class UsertableComponent {
   blogs: any;
 display: any;
 data: any;
+  allusersstatus: any;
 reloadPage() {
   location.reload();
 }
@@ -37,6 +38,10 @@ reloadPage() {
     api.users().subscribe((data)=>{
     console.warn("data",data);
     this.allusersData=data;
+    let user=this.allusersData.filter((t: { status: string; })=>t.status === "user");
+    this.allusersstatus=user;
+    console.log("user",user);
+    
   });
   }
   ngOnInit(): void {

@@ -67,15 +67,15 @@
         
       </thead>
       <tbody>
-        <tr *ngFor="let data of allusersData">
-          <td>{{data.id}}</td>
-          <td>{{data.name}}</td>
-          <td>{{data.username}}</td>
-          <td>{{data.password}}</td>
-          <td>{{data.status}}</td>
+        <tr *ngFor="let user of allusersstatus">
+          <td>{{user.id}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.username}}</td>
+          <td>{{user.password}}</td>
+          <td>{{user.status}}</td>
          
           <td>
-           <button class="btn btn-danger"(click)="deleteuser(data)"><i class="bi bi-trash"></i></button>
+           <button class="btn btn-danger"(click)="deleteuser(user)"><i class="bi bi-trash"></i></button>
           </td>
         </tr>
       </tbody>

@@ -10,7 +10,7 @@
           <i class="login__icon fas fa-lock"></i>
           <input formControlName="password" type="password" class="login__input" placeholder="Password" required>
         </div>
-        <button class="button login__submit">
+        <button class="button login__submit" [disabled]="loginform.invalid">
           <span class="button__text">Log In Now</span>
           <i class="button__icon fas fa-chevron-right"></i>
         </button>
