@@ -35,14 +35,14 @@ reloadPage() {
     //   this.blogs=display;
     // }
     // );
-    api.users().subscribe((data)=>{
-    console.warn("data",data);
-    this.allusersData=data;
-    let user=this.allusersData.filter((t: { status: string; })=>t.status === "user");
-    this.allusersstatus=user;
-    console.log("user",user);
+  //   api.users().subscribe((data)=>{
+  //   console.warn("data",data);
+  //   this.allusersData=data;
+  //   let user=this.allusersData.filter((t: { status: string; })=>t.status === "user");
+  //   this.allusersstatus=user;
+  //   console.log("user",user);
     
-  });
+  // });
   }
   ngOnInit(): void {
      this.formvalue=this.formbuilder.group({
@@ -51,6 +51,7 @@ reloadPage() {
       password:[''],
       status:[''] 
       })
+      this.getallData();
   }
  
   addusers(){
@@ -70,8 +71,12 @@ reloadPage() {
     })
   }
   getallData(){
-    this.api.getusers().subscribe(res=>{
-      this.allusersData = res;
+    this.api.getusers().subscribe((res)=>{
+      // this.allusersData = res;
+    // this.allusersData=data;
+    this.allusersData = res.filter((t: { status: string; })=>t.status === "user");
+  
+    // console.log("user",user);
     })
   }
   deleteuser(data:any){

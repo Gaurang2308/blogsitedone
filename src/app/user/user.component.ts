@@ -40,7 +40,7 @@ export class UserComponent implements OnInit {
 
 
     this.formvalue = this.form.group({
-      Username: this.userName,
+      username: this.userName,
       title: [''],
       discription: [''],
       url: ['']
@@ -68,7 +68,7 @@ export class UserComponent implements OnInit {
     this.blogModelobj.title = this.formvalue.value.title;
     this.blogModelobj.discription = this.formvalue.value.discription;
     this.blogModelobj.url = this.formvalue.value.url;
-    this.blogModelobj.Username = this.userName;
+    this.blogModelobj.username = this.userName;
     console.log(this.formvalue.value)
     this.dis.postblogs(this.formvalue.value).subscribe(res => {
       console.log(this.formvalue.value);
